@@ -52,13 +52,16 @@ MonoBehaviour:
     enemyType: 0
     enemySpawnCountRange: {x: 1, y: 1}
   spawnNewEnemyOnDestroyList:
-  - enemyHealth: 20
+  - enemyHealth: 100
     enemyType: 0
     enemySpawnCountRange: {x: 2, y: 2}
-  - enemyHealth: 20
+  - enemyHealth: 100
     enemyType: 0
     enemySpawnCountRange: {x: 1, y: 5}
   toDestroy: 0
+  rigidbody: {fileID: 3815666678811927680}
+  forceRange: {x: 30, y: 50}
+  torqueRange: {x: 10, y: 20}
 --- !u!50 &3815666678811927680
 Rigidbody2D:
   serializedVersion: 4
@@ -189,8 +192,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a669eedaabf50840812651a1c61934d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b2036314b6bf7214ba10afa42bbe4a63, type: 3}
+  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

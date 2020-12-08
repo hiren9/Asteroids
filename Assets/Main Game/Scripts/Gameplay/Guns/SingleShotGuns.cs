@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Asteroids.Managers;
 
 namespace Asteroids.Gameplay
 {
@@ -8,7 +6,7 @@ namespace Asteroids.Gameplay
     {              
         public override void UseGun(Spaceship ship)
         {
-            var b = Instantiate(bullet, ship.gunPoint.position, ship.transform.rotation);
+            var b = Instantiate(bullet, ship.gunPoint.position, ship.transform.rotation , ObjectReference.BulletParent.transform);
 
             b.ExecuteBullet();
         }

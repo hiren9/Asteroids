@@ -11,6 +11,7 @@ namespace Asteroids.Gameplay
         public NextEnemySpawnClass currEnemySpawnClass;
         public List<NextEnemySpawnClass> spawnNewEnemyOnDestroyList = new List<NextEnemySpawnClass>();
         public bool toDestroy = false;
+        public Rigidbody2D rigidbody;
         public virtual void StartAnimation() 
         {
             throw new System.NotImplementedException();
@@ -25,8 +26,7 @@ namespace Asteroids.Gameplay
         public virtual void OnGotHitByBullet(Bullets bullet)
         {
             if (toDestroy) return;
-
-            Debug.LogError("HERE");
+            
             currEnemySpawnClass.enemyHealth -= bullet.bulletDamage;
             if (currEnemySpawnClass.enemyHealth <= 0)
             {
@@ -36,8 +36,7 @@ namespace Asteroids.Gameplay
         }
 
         public virtual void SpawNextEnemy(NextEnemySpawnClass newEnemyData , List<NextEnemySpawnClass> newEnemySpawnClasses)
-        {
-            Debug.LogError("Spawn next Enemy");
+        {            
 
             var count = Random.Range((int)newEnemyData.enemySpawnCountRange.x, (int)newEnemyData.enemySpawnCountRange.y);
 
@@ -52,8 +51,7 @@ namespace Asteroids.Gameplay
         }
 
         public virtual void OnGotDestroyed()
-        {
-            Debug.LogError("On Destroyed");
+        {            
 
             if (spawnNewEnemyOnDestroyList.Count > 0)
             {
