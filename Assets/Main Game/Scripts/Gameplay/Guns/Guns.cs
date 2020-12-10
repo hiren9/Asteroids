@@ -9,17 +9,14 @@ namespace Asteroids.Gameplay
     public abstract class Guns : MonoBehaviour
     {
         public Bullets bullet;
-        public GunTypes gunType;       
-        public abstract void UseGun(Spaceship ship);
-        public void SetBullet(Bullets arg0)
-        {
-            bullet = arg0;
-        }
+        public GunTypes gunType;
+        public float timeBetWeen2Shots;
+        public abstract void UseGun(Spaceship ship);      
     }
 
     public enum GunTypes
     {
         SINGLESHOT,
-        MULTIPLESHOT
+        TRIPLESHOT
     }
 }

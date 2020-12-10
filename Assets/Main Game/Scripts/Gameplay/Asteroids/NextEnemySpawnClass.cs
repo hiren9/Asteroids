@@ -9,7 +9,8 @@ namespace Asteroids.Gameplay
     {
         public float enemyHealth;
         public EnemyTypes enemyType;
-        public Vector2 enemySpawnCountRange;   
+        public Vector2 enemySpawnCountRange;
+        public int pointsOnGetDestroy = 10;
     }
 
     public enum EnemyTypes

@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Asteroids.Gameplay
 {
-    public class SingleBullet : Bullets
+    public class BlastpowerBullet : Bullets
     {
         public float moveSpeed = 10;
         private bool bulletAnimation = false;
-        
+        public GameObject bulletImage;
+
         private void Update()
         {
             if (!bulletAnimation) return;
@@ -23,14 +24,14 @@ namespace Asteroids.Gameplay
 
         public override void ExecuteBullet()
         {
-            gameObject.SetActive(true);
+            bulletImage.SetActive(true);
             bulletAnimation = true;
             Destroy(gameObject, deathTime);
         }
 
         public override void OnBulletHIt()
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 }

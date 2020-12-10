@@ -32,7 +32,7 @@ namespace Asteroids.Managers
         }
 
         public static Powers GetPower(PowerTypes powerType)
-        {
+        {            
             return instance.powers.Find(x => x.powerType == powerType);
         }
         public static float GetBooster(int value)

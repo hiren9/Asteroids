@@ -6,6 +6,7 @@ namespace Asteroids.Gameplay
     {
         public Spaceship spaceShip;        
         public float boosterSpeed;
+        public float boosterFriction;
         public Powers power;
         public Guns gun;
 
@@ -19,9 +20,10 @@ namespace Asteroids.Gameplay
             power = arg0;
         }
 
-        public void SetBooster(float arg0)
+        public void SetBoosterAdFriction(float arg0 , float arg1)
         {
             boosterSpeed = arg0;
+            boosterFriction = arg1;
         }
 
         public void SetSpaceShipReference(Spaceship arg0)

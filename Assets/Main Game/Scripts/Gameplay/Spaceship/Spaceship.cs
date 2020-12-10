@@ -9,18 +9,22 @@ namespace Asteroids.Gameplay
     {
         public Transform gunPoint;
         public Transform powerPoint;
-        public SpaceshipResources spaceshipResources;        
+        public SpaceshipResources spaceshipResources;
+        public float friction  = 10; 
+
+        private float tempBoostValue;
+        private Vector3 forwardDirection;
 
         private void Start()
         {
             spaceshipResources = new DefaultResources();
 
-            var gun = ContentMaanger.GetGun((GunTypes)DataManager.Gun);
-            var power = ContentMaanger.GetPower((PowerTypes)DataManager.Power);
+            var gun = Instantiate( ContentMaanger.GetGun((GunTypes)DataManager.Gun) , Vector3.zero , Quaternion.identity , transform);
+            var power = Instantiate(ContentMaanger.GetPower((PowerTypes)DataManager.Power), Vector3.zero, Quaternion.identity, transform);
             spaceshipResources.SetGun(gun);
             spaceshipResources.SetPower(power);
             spaceshipResources.SetSpaceShipReference(this);
-            spaceshipResources.SetBooster(DataManager.Booster);
+            spaceshipResources.SetBoosterAdFriction(ObjectReference.Booster , friction);
         }
 
         public void OnEnable()
@@ -53,7 +57,26 @@ namespace Asteroids.Gameplay
 
         public void BoostRocket() 
         {
-            transform.position += transform.up * (spaceshipResources.GetBoosterSpeed() * Time.deltaTime);
+            forwardDirection = transform.up.normalized;
+            tempBoostValue = spaceshipResources.GetBoosterSpeed();
+            UpdatePosition();
+        }
+
+        private void ReduceBoosterGradually()
+        {
+            if (tempBoostValue <= 0) return;
+            tempBoostValue -= Time.deltaTime;
+            UpdatePosition();
+        }
+
+        private void UpdatePosition()
+        {
+            transform.position += forwardDirection * (tempBoostValue * Time.deltaTime);
+        }
+
+        private void Update()
+        {
+            ReduceBoosterGradually();
         }
 
         public void Shoot() 

@@ -51,13 +51,16 @@ MonoBehaviour:
     enemyHealth: 0
     enemyType: 0
     enemySpawnCountRange: {x: 1, y: 1}
+    pointsOnGetDestroy: 100
   spawnNewEnemyOnDestroyList:
   - enemyHealth: 100
     enemyType: 0
     enemySpawnCountRange: {x: 2, y: 2}
+    pointsOnGetDestroy: 10
   - enemyHealth: 100
     enemyType: 0
     enemySpawnCountRange: {x: 1, y: 5}
+    pointsOnGetDestroy: 10
   toDestroy: 0
   rigidbody: {fileID: 3815666678811927680}
   forceRange: {x: 30, y: 50}

@@ -7,7 +7,7 @@ namespace Asteroids.Gameplay
 {
     [System.Serializable]
     public class Enemy : MonoBehaviour
-    {
+    {   
         public NextEnemySpawnClass currEnemySpawnClass;
         public List<NextEnemySpawnClass> spawnNewEnemyOnDestroyList = new List<NextEnemySpawnClass>();
         public bool toDestroy = false;
@@ -30,7 +30,8 @@ namespace Asteroids.Gameplay
             currEnemySpawnClass.enemyHealth -= bullet.bulletDamage;
             if (currEnemySpawnClass.enemyHealth <= 0)
             {
-                toDestroy = true; 
+                toDestroy = true;
+                GameManager.addToCurrentScore.Invoke(currEnemySpawnClass.pointsOnGetDestroy);
                 OnGotDestroyed();
             }
         }

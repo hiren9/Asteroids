@@ -9,6 +9,7 @@ namespace Asteroids.Managers
         private const string currentGun = "C_Gun";
         private const string currentPower = "C_Power";
         private const string booster = "Boost";
+        private const string highScore = "HighScore";
 
         public static int Gun
         {
@@ -22,10 +23,10 @@ namespace Asteroids.Managers
             set { PlayerPrefs.SetInt(currentPower, value); }
         }
 
-        public static float Booster
+        public static float HighScore
         {
-            get { return PlayerPrefs.GetFloat(booster, 10); }
-            set { PlayerPrefs.SetFloat(booster, value); }
+            get { return PlayerPrefs.GetFloat(highScore, 0); }
+            set { PlayerPrefs.SetFloat(highScore, value); }
         }
 
 

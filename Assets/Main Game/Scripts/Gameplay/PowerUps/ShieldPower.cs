@@ -5,13 +5,12 @@ using UnityEngine;
 
 namespace Asteroids.Gameplay
 {
-    public class BlastPower : Powers
-    {   
+    public class ShieldPower : Powers
+    {
         public override void ExecutePower(Spaceship ship)
         {
             var b = Instantiate(power, ship.gunPoint.position, ship.transform.rotation, ObjectReference.BulletParent.transform);
             b.ExecuteBullet();
-        }
-       
+        }             
     }
 }

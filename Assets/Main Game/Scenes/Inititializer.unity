@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -306,8 +306,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guns:
   - {fileID: 7440745117904568180, guid: a83507449e6c4cc468e8df7e4484117b, type: 3}
+  - {fileID: 8148047793725629685, guid: 82f0c5ee099a8524889423389ccf82cf, type: 3}
   powers:
   - {fileID: 2582782560030736986, guid: 2897c248412c9344b842135ca86dc8ef, type: 3}
+  - {fileID: 3441259883120764472, guid: bb05283064cace74d87d2abf66b1b37d, type: 3}
+  - {fileID: 6130643780592866603, guid: 8959a2381fe2fb44a81f991c11321093, type: 3}
   enemies:
   - {fileID: 6448789816524493263, guid: 2d4ff448df86312408cc15e88c52bd7f, type: 3}
   boosters:
@@ -565,3 +568,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291e1adfd3610dd4c864239cfab44926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
