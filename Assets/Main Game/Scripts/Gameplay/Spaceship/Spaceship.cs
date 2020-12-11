@@ -10,7 +10,7 @@ namespace Asteroids.Gameplay
         public Transform gunPoint;
         public Transform powerPoint;
         public SpaceshipResources spaceshipResources;
-        public float friction  = 10; 
+        public bool isInvincible;
 
         private float tempBoostValue;
         private Vector3 forwardDirection;
@@ -24,7 +24,7 @@ namespace Asteroids.Gameplay
             spaceshipResources.SetGun(gun);
             spaceshipResources.SetPower(power);
             spaceshipResources.SetSpaceShipReference(this);
-            spaceshipResources.SetBoosterAdFriction(ObjectReference.Booster , friction);
+            spaceshipResources.SetBoosterAdFriction(ObjectReference.Booster , ObjectReference.BoosterFriction);
         }
 
         public void OnEnable()
@@ -65,7 +65,7 @@ namespace Asteroids.Gameplay
         private void ReduceBoosterGradually()
         {
             if (tempBoostValue <= 0) return;
-            tempBoostValue -= Time.deltaTime;
+            tempBoostValue -= Time.deltaTime * spaceshipResources.GetBoosterFriction();
             UpdatePosition();
         }
 
@@ -82,6 +82,14 @@ namespace Asteroids.Gameplay
         public void Shoot() 
         {
             spaceshipResources.Shoot();
+        }
+
+        public void OnSpaceShipGotHit()
+        {
+            if (isInvincible) return;
+
+            GameSceneManager.LoadMainMenuScene();
+            GameManager.onGameEnd.Invoke();
         }
 
         public void UsePower() 

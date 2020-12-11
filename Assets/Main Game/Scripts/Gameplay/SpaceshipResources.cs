@@ -36,6 +36,11 @@ namespace Asteroids.Gameplay
             return boosterSpeed;
         }
 
+        public float GetBoosterFriction()
+        {
+            return boosterFriction;
+        }
+
         public void BoostRocket()
         {
             Debug.LogError("Boost Rockets");

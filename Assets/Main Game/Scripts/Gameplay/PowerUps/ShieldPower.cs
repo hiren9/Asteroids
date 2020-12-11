@@ -9,7 +9,8 @@ namespace Asteroids.Gameplay
     {
         public override void ExecutePower(Spaceship ship)
         {
-            var b = Instantiate(power, ship.gunPoint.position, ship.transform.rotation, ObjectReference.BulletParent.transform);
+            var b = Instantiate(power, ship.gunPoint.position, ship.transform.rotation, ship.transform);
+            
             b.ExecuteBullet();
         }             
     }

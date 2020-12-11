@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4526389616989132447}
   - component: {fileID: 7350297650626318052}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: Asteroid Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,19 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEnemySpawnClass:
-    enemyHealth: 250
-    enemyType: 0
-    enemySpawnCountRange: {x: 1, y: 1}
-    pointsOnGetDestroy: 100
-  spawnNewEnemyOnDestroyList:
-  - enemyHealth: 100
-    enemyType: 1
-    enemySpawnCountRange: {x: 2, y: 2}
-    pointsOnGetDestroy: 10
-  - enemyHealth: 50
+    enemyHealth: 50
     enemyType: 2
-    enemySpawnCountRange: {x: 1, y: 2}
+    enemySpawnCountRange: {x: 1, y: 1}
     pointsOnGetDestroy: 10
+  spawnNewEnemyOnDestroyList: []
   toDestroy: 0
   rigidbody: {fileID: 3815666678811927680}
   forceRange: {x: 30, y: 50}
@@ -196,7 +188,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2036314b6bf7214ba10afa42bbe4a63, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

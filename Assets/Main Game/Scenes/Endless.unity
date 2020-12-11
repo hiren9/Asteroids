@@ -434,16 +434,26 @@ MonoBehaviour:
     AsteroidsPer5Sec: 1
     waveAsteroidCount: 2
     waveTime: 5
-    typesOfAsteroidGeneration: 00000000
+    typesOfAsteroidGeneration: 0200000001000000
   - waveNumber: 2
     AsteroidsPer5Sec: 3
     waveAsteroidCount: 5
     waveTime: 10
-    typesOfAsteroidGeneration: 00000000
+    typesOfAsteroidGeneration: 0100000002000000
   - waveNumber: 3
-    AsteroidsPer5Sec: 7
-    waveAsteroidCount: 15
+    AsteroidsPer5Sec: 5
+    waveAsteroidCount: 7
     waveTime: 15
+    typesOfAsteroidGeneration: 01000000
+  - waveNumber: 4
+    AsteroidsPer5Sec: 7
+    waveAsteroidCount: 10
+    waveTime: 15
+    typesOfAsteroidGeneration: 0100000000000000
+  - waveNumber: 5
+    AsteroidsPer5Sec: 10
+    waveAsteroidCount: 13
+    waveTime: 20
     typesOfAsteroidGeneration: 00000000
   currentGenerationData:
     waveNumber: 0
@@ -496,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPoint: {fileID: 130034762}
   powerPoint: {fileID: 1481074836}
-  friction: 10
+  isInvincible: 0
 --- !u!4 &711286618
 Transform:
   m_ObjectHideFlags: 0
@@ -547,7 +557,7 @@ MonoBehaviour:
   _bulletParent: {fileID: 304246773}
   _enemyParent: {fileID: 1428611137}
   _boosterValue: 10
-  _boosterFrictionValue: 1000
+  _boosterFrictionValue: 15
 --- !u!4 &776982291
 Transform:
   m_ObjectHideFlags: 0
@@ -960,6 +970,8 @@ GameObject:
   - component: {fileID: 1738692865}
   - component: {fileID: 1738692867}
   - component: {fileID: 1738692866}
+  - component: {fileID: 1738692868}
+  - component: {fileID: 1738692869}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -1052,6 +1064,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1738692868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738692864}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 9, y: 9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
+--- !u!114 &1738692869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738692864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a6894b9c8a7b4b99a55b59419ac18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceship: {fileID: 711286617}
 --- !u!1 &1952733790
 GameObject:
   m_ObjectHideFlags: 0

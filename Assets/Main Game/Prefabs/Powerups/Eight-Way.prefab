@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerType: 1
   power: {fileID: 4129499399350712038}
-  timeBetWeen2Shots: 0
+  timeBetWeen2Shots: 3
 --- !u!1 &7947966861018425720
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7940907468027290371
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   deathTime: 10
   bulletDamage: 10
   moveSpeed: 10
-  bulletImage: {fileID: 4944825392574806218}
+  bulletImage: {fileID: 7947966861018425720}
 --- !u!114 &7066598962317532640
 MonoBehaviour:
   m_ObjectHideFlags: 0

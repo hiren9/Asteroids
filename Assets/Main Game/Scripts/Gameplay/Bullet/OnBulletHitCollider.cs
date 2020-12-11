@@ -9,6 +9,8 @@ namespace Asteroids.Gameplay
         public Bullets bullets;
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if(collision.GetComponent<Enemy>() == null) return;
+
             bullets.OnBulletHIt();
 
         }

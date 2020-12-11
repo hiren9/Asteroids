@@ -313,6 +313,8 @@ MonoBehaviour:
   - {fileID: 6130643780592866603, guid: 8959a2381fe2fb44a81f991c11321093, type: 3}
   enemies:
   - {fileID: 6448789816524493263, guid: 2d4ff448df86312408cc15e88c52bd7f, type: 3}
+  - {fileID: 6448789816524493263, guid: d43ee0b6ed2e4ab4fa721c231921f70a, type: 3}
+  - {fileID: 6448789816524493263, guid: 991361c7bcf03784d95d76786a6d2dca, type: 3}
   boosters:
   - 10
   - 20
@@ -367,7 +369,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.06425775, g: 0.10897512, b: 0.1792453, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
